@@ -1,25 +1,23 @@
-import logo from './logo.svg';
+
+import { useEffect } from 'react';
 import './App.css';
+import PokeMenu from './components/PokeMenu'
+import PokeSearch from './components/PokeSearch'
+import UsernameForm from './components/Dex'
+const API_URL = 'https://pokeapi.co/api/v2/pokemon/'
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    
+    
+ 
+    return(
+        <div>
+            <PokeMenu/>
+        <PokeSearch/>
+
+        </div>
+
+    )
 }
 
 export default App;
