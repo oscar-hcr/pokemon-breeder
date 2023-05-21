@@ -1,15 +1,15 @@
 import React from 'react'
-import Favorites from '../components/Favorites';
+import GetFavorites from '../components/AddFavorites';
 
-function FavoritePokemons() {
+function FavoritePokemon() {
     return (
         <div className='favorites'>
             <h1>Favorites</h1>
-            <Favorites />
+            <GetFavorites />
         </div>
 
 
     )
 
 }
-export default FavoritePokemons;
+export default FavoritePokemon;

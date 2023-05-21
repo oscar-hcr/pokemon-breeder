@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import Capitalize from '../utilities/strings'
-import Favorites from '../components/Favorites'
+import AddFavorites from './AddFavorites'
 
 const API_URL = 'https://pokeapi.co/api/v2/pokemon/';
 
@@ -39,9 +39,14 @@ function PokeSearch() {
           <p>Name: {Capitalize(searchResult.name)}</p>
           <p>Weight: {searchResult.weight}</p>
           <p>Id: {searchResult.id}</p>
-          <p> <img src={searchResult.sprites.front_default}></img></p>
+          <p> 
+            <img src={searchResult.sprites.back_default}></img>
+            <img src={searchResult.sprites.front_default}></img>
+        
           
-          <Favorites pokemon={searchResult.name}/>
+          </p>
+          
+          <AddFavorites pokemon={searchResult}/>
         </div>
       ) : (
         <p>Searching...</p>

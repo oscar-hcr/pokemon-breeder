@@ -156,3 +156,11 @@ span {
   font-size: calc(10px + 2vmin);
   color: white;
 }
+
+.pokemon-list {
+  display: flex;
+}
+
+.pokemon-item {
+  margin-right: 20px;
+}
