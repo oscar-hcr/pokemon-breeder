@@ -21,6 +21,18 @@ function PokeSearch() {
     }
   };
 
+  useEffect(() => {
+    const storedPokemon = localStorage.getItem('pokemon');
+    if (storedPokemon) {
+      setPokemon(storedPokemon);
+    }
+  }, []);
+
+  const handleInputChange = (event) => {
+    const userInput = event.target.value;
+    setPokemon(userInput);
+    localStorage.setItem('pokemon', userInput);
+  };
   return (
     <>
       <form onSubmit={handleSubmit}>
@@ -30,6 +42,7 @@ function PokeSearch() {
             type="text"
             value={pokemon}
             onChange={(event) => setPokemon(event.target.value)}
+            onChange={handleInputChange}
           />
         </label>
         <button type="submit">Search</button>
@@ -42,10 +55,7 @@ function PokeSearch() {
           <p> 
             <img src={searchResult.sprites.back_default}></img>
             <img src={searchResult.sprites.front_default}></img>
-        
-          
-          </p>
-          
+          </p>  
           <AddFavorites pokemon={searchResult}/>
         </div>
       ) : (
